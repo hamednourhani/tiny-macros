@@ -1,8 +1,9 @@
 package ir.itstar.tinyMacros.macros
 
-import scala.annotation.StaticAnnotation
+import scala.annotation._
 import scala.collection.mutable
 import scala.meta._
+
 
 class get extends StaticAnnotation
 class put extends StaticAnnotation
@@ -10,6 +11,7 @@ class post extends StaticAnnotation
 class patch extends StaticAnnotation
 
 class Resource extends StaticAnnotation {
+
   inline def apply(defn: Any): Any = meta {
     val (cls, companion) = defn match {
       case q"${cls: Defn.Class}; ${companion: Defn.Object}" => (cls, companion)

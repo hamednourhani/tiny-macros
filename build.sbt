@@ -8,9 +8,15 @@ version := "0.0.1"
 
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature")
 
+resolvers += Resolver.sonatypeRepo("releases")
+
+val paradiseVersion = "2.1.0"
+
 libraryDependencies ++= Seq(
   "org.scalameta" %% "scalameta" % "3.7.4",
-  "org.scala-lang" % "scala-reflect" % "2.12.6"
+  "org.scala-lang" % "scala-reflect" % "2.12.6",
+  "org.scalatest" %% "scalatest" % "3.0.4"
+
 )
 
-addCompilerPlugin("org.scalameta" % "paradise" % "3.0.0-M8" cross CrossVersion.full)
+addCompilerPlugin("org.scalamacros" % "paradise" % paradiseVersion cross CrossVersion.full)
