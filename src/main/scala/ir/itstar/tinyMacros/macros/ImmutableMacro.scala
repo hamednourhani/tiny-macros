@@ -10,6 +10,13 @@ object Immutable {
 
 }
 
+
+object TestRunner {
+  val k = 1 -> 2
+  k.productElement(0)
+  val m: Iterator[Any] = k.productIterator
+}
+
 object ImmutableMacro {
 
   def impl[T](c: blackbox.Context)(implicit tag: c.WeakTypeTag[T]): c.universe.Tree = {

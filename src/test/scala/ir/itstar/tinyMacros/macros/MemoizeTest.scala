@@ -33,7 +33,6 @@ class MemoizeTest extends WordSpec with Matchers {
 
     var callsCount = 0
 
-    @Memoize
     def testFunction(a: String, b: Int, c: Long) = {
       callsCount += 1
       s"$a - $b - $c"
